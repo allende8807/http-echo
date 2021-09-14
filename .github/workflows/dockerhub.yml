@@ -8,7 +8,7 @@ name: Publish DockerHub image
 on:
   release:
     tags: [ 'v*.*.*' ]
-    branches: [ main ]
+    branches: [ disabled ]
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
