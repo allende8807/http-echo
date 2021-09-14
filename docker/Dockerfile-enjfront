@@ -5,7 +5,8 @@ LABEL enjoty.webapp.builder=true
 WORKDIR /usr/src/enjotywebapp
 ENV PATH /usr/src/enjotywebapp/node_modules/.bin:$PATH
 ##COPY package*.json tsconfig.json ./
-RUN npm ci --silent
+RUN npm install
+RUN npm ci --silent --only=production
 ENV NODE_ENV production
 COPY . .
 RUN npm run build
